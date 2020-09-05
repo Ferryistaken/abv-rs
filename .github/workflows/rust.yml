@@ -18,5 +18,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build
       run: cargo build --verbose
-    - name: Run tests
+    - name: Run Cargo Tests
       run: cargo test --verbose
+    - name: Run General Tests
+      run: echo "😁, hello, の, は, でした" | cargo run
+      run: echo "hello \n newline" | cargo run

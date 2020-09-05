@@ -1,5 +1,6 @@
 # ABV-RS - Abbreviate any text to a given lenght
 
+![Rust](https://github.com/Ferryistaken/abv-rs/workflows/Rust/badge.svg)
 
 ## Description
 
