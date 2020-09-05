@@ -26,7 +26,7 @@ struct Opt {
 
     /// Set lenght of the output
     #[structopt(short, long, default_value = "7")]
-    lenght: u16,
+    lenght: usize,
 }
 
 fn main() {
@@ -45,5 +45,20 @@ fn main() {
         println!("The Stdin is: {}", buffer);
     }
 
+    // actual string manipulation
+    let input: Vec<&str> = buffer.split("\n").collect();
+    let mut input: String = input[0].to_string();
+
+    let (input, useless) = input.split_at(opt.lenght);
+
+    if opt.debug == true {
+        println!("The input after the split: {}", input);
+    }
+
+
+    let output = format!("{}...", input);
+
+
+    print!("{}", output);
 
 }
