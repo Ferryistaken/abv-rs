@@ -58,7 +58,6 @@ fn main() {
 
     let output = format!("{}...", input);
 
-
     print!("{}", output);
 
 }
