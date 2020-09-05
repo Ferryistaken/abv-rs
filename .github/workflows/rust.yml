@@ -23,4 +23,4 @@ jobs:
     - name: Run General Test 1
       run: echo "😁, hello, の, は, でした" | cargo run
     - name: Run General Test 2
-      run: echo "hello \n newline" | cargo run
+      run: printf "hello \n newline" | cargo run
