@@ -21,6 +21,6 @@ jobs:
     - name: Run Cargo Tests
       run: cargo test --verbose
     - name: Run General Test 1
-      run: echo "😁, hello, の, は, でした" | cargo run
+      run: echo "😁, hello, の, は, でした" | cargo run -- -d
     - name: Run General Test 2
-      run: printf "hello \n newline" | cargo run
+      run: printf "hello \n newline" | cargo run -- -d -l 2

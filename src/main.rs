@@ -1,4 +1,5 @@
 use std::io::{self, Read};
+use structopt::StructOpt;
 
 /*
 #[cfg(test)]
@@ -15,7 +16,23 @@ mod tests {
 }
 */
 
+#[derive(Debug, StructOpt)]
+#[structopt(name = "Abbreviate", about = "Abv-rs options")]
+struct Opt {
+    /// Activate debug mode
+    // short and long flags (-d, --debug) will be deduced from the field's name
+    #[structopt(short, long)]
+    debug: bool,
+
+    /// Set lenght of the output
+    #[structopt(short, long, default_value = "7")]
+    lenght: u16,
+}
+
 fn main() {
+    // command line options
+    let opt = Opt::from_args();
+
     let mut buffer: String = String::new();
     let stdin = io::stdin();
 
@@ -23,5 +40,10 @@ fn main() {
 
     handle.read_to_string(&mut buffer).unwrap();
 
-    print!("The Stdin is: {}", buffer);
+    if opt.debug == true {
+        println!("The current limit is: {}", opt.lenght);
+        println!("The Stdin is: {}", buffer);
+    }
+
+
 }
