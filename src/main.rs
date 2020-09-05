@@ -47,9 +47,9 @@ fn main() {
 
     // actual string manipulation
     let input: Vec<&str> = buffer.split("\n").collect();
-    let mut input: String = input[0].to_string();
+    let input: String = input[0].to_string();
 
-    let (input, useless) = input.split_at(opt.lenght);
+    let (input, _useless) = input.split_at(opt.lenght);
 
     if opt.debug == true {
         println!("The input after the split: {}", input);
