@@ -20,6 +20,7 @@ jobs:
       run: cargo build --verbose
     - name: Run Cargo Tests
       run: cargo test --verbose
-    - name: Run General Tests
+    - name: Run General Test 1
       run: echo "😁, hello, の, は, でした" | cargo run
+    - name: Run General Test 2
       run: echo "hello \n newline" | cargo run
